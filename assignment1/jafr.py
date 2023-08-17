@@ -232,22 +232,31 @@ def main():
 
         print("These tasks need to be finished in the next three days!")
 
-        onedays = datetime.date.today() + datetime.timedelta(days=1)
-        twodays = datetime.date.today() + datetime.timedelta(days=2)
-        threedays = datetime.date.today() + datetime.timedelta(days=3)
+        onedays = (datetime.date.today() + datetime.timedelta(days=1)).strftime("%d/%m/%y")
+
+        twodays = (datetime.date.today() + datetime.timedelta(days=2)).strftime("%d/%m/%y")
+
+        threedays = (datetime.date.today() + datetime.timedelta(days=3)).strftime("%d/%m/%y")
 
         taskcount = 0
         for task in lines:
             if str(onedays) in task or str(twodays) in task or str(threedays) in task:
                 print(task)
                 taskcount += 1
-                print('test')
-        if todaytask == 0:
+        if taskcount == 0:
             print("No tasks for the next three days")
 
-
-
         print("You have the following meetings today!")
+        with open("meetings.md", "r") as file:
+            lines = file.readlines()
+
+        todaymeeting = 0
+        for meeting in lines:
+            if currentdate in meeting:
+                print(meeting)
+                todaymeeting += 1
+        if todaymeeting == 0:
+            print("No meetings today")
 
         print("You have the following meetings scheduled over the next week!")
 

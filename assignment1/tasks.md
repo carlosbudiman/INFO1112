@@ -1,8 +1,8 @@
 # ELEC1601
 
 - Study 2's complement Due: 08/08/23 complete
-- Study floating point representations Due: 17/08/23 not complete
-- Study floating point representations Due: 18/08/23 not complete
+- Study floating point representations Due: 17/08/23 complete
+- Study floating point representations Due: 18/08/23 complete
 - Study floating point representations Due: 19/08/23 not complete
 - Study floating point representations Due: 20/08/23 not complete
 
