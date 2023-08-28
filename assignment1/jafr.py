@@ -190,7 +190,7 @@ def share_meeting():
         settings = json.load(json_file)
         master_directory = settings.get("master", "")
 
-    meetings_file_path = (master_directory + "/meetings.md").replace("/home/", "")
+    meetings_file_path = (master_directory + "/meetings.md").replace("/home/    ", "")
     with open(meetings_file_path, "a") as file:
         file.write(f"##### added by you\n{placeholder[numtask-1]} \n")
 
@@ -225,7 +225,7 @@ def main():
         todaytask = 0
         for task in lines:
             if currentdate in task:
-                print(task)
+                print(task.strip())
                 todaytask += 1
         if todaytask == 0:
             print("No tasks today")
@@ -241,7 +241,7 @@ def main():
         taskcount = 0
         for task in lines:
             if str(onedays) in task or str(twodays) in task or str(threedays) in task:
-                print(task)
+                print(task.strip())
                 taskcount += 1
         if taskcount == 0:
             print("No tasks for the next three days")
@@ -259,6 +259,7 @@ def main():
             print("No meetings today")
 
         print("You have the following meetings scheduled over the next week!")
+        
 
         displaymenu()
 
